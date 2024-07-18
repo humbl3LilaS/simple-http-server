@@ -39,6 +39,7 @@ public class ServerListenerThread extends Thread
 				LOGGER.info("Connection accepted: " + socket.getInetAddress());
 
 				var connectionWorker = new ConnectionWorkThread(socket);
+				connectionWorker.setRoot(webroot);
 				connectionWorker.start();
 			}
 		}
